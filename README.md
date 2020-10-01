@@ -1,2 +1,2 @@
-# laravel-yapikredi-payment-gateway-
- Yapı Kredi Bank Payment 
+# laravel-yapikredi-payment-gateway
+ Yapı Kredi Bank Payment Gateway

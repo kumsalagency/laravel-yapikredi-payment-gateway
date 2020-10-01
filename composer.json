@@ -1,0 +1,39 @@
+{
+    "name": "kumsalagency/laravel-yapikredi-payment-gateway",
+    "description": "Kuveyt Türk Participation Bank Payment ",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kumsal Ajans",
+            "email": "developer@kumsalajans.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "KumsalAgency\\Payment\\YapiKredi\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=7.2.0",
+        "ext-soap": "*",
+        "illuminate/http": "~5.8.0|^6.0|^7.0|^8.0",
+        "guzzlehttp/guzzle": "^6.0|^7.0",
+        "kumsalagency/laravel-payment": "^1.0",
+        "ext-simplexml": "*"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.x-dev"
+        },
+        "laravel": {
+            "providers": [
+                "KumsalAgency\\Payment\\KuveytTurk\\YapiKrediServiceProvider"
+            ],
+            "aliases": {
+                "YapiKredi": "KumsalAgency\\Payment\\YapiKredi\\Facades\\YapiKredi"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
