@@ -14,12 +14,12 @@
         }
     },
     "require": {
-        "php": ">=7.2.0",
-        "ext-soap": "*",
+        "php": ">=7.4",
         "illuminate/http": "~5.8.0|^6.0|^7.0|^8.0",
         "guzzlehttp/guzzle": "^6.0|^7.0",
         "kumsalagency/laravel-payment": "^1.0",
-        "ext-simplexml": "*"
+        "ext-simplexml": "*",
+        "phpseclib/mcrypt_compat": "^1.0"
     },
     "extra": {
         "branch-alias": {
@@ -27,7 +27,7 @@
         },
         "laravel": {
             "providers": [
-                "KumsalAgency\\Payment\\KuveytTurk\\YapiKrediServiceProvider"
+                "KumsalAgency\\Payment\\YapiKredi\\YapiKrediServiceProvider"
             ],
             "aliases": {
                 "YapiKredi": "KumsalAgency\\Payment\\YapiKredi\\Facades\\YapiKredi"

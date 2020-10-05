@@ -30,6 +30,16 @@ class YapiKrediServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        $this->registerResources();
+    }
 
+    /**
+     * Register the package resources such as routes, templates, etc.
+     *
+     * @return void
+     */
+    protected function registerResources()
+    {
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'laravel-yapikredi-payment-gateway');
     }
 }
