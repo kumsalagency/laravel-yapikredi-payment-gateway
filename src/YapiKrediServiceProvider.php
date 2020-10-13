@@ -55,7 +55,7 @@ class YapiKrediServiceProvider extends ServiceProvider
     protected function registerPublishing()
     {
         $this->publishes([
-            __DIR__.'/../resources/views' => resource_path('views/vendor/payment-yapikredi'),
-        ], 'payment-yapikredi');
+            __DIR__.'/../resources/views' => resource_path('views/vendor/laravel-yapikredi-payment-gateway'),
+        ], 'laravel-yapikredi-payment-gateway');
     }
 }
