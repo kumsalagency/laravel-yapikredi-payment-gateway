@@ -202,8 +202,6 @@ class YapiKredi extends PaymentGateway
         }
         catch (PaymentException $exception)
         {
-            Log::error($exception);
-
             throw new PaymentException($exception->getMessage(),$exception->getCode());
         }
         catch (\Exception $exception)
