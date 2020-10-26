@@ -107,13 +107,13 @@ class YapiKredi extends PaymentGateway
             }
             catch(ConnectionException $exception)
             {
-                Log::info($exception);
+                Log::error($exception);
 
                 throw new PaymentException(null,PaymentException::ErrorConnection,$exception);
             }
             catch (\Exception $exception)
             {
-                Log::info($exception);
+                Log::error($exception);
 
                 throw new PaymentException(null,PaymentException::ErrorGeneral,$exception);
             }
@@ -196,19 +196,19 @@ class YapiKredi extends PaymentGateway
         }
         catch (ConnectionException $exception)
         {
-            Log::info($exception);
+            Log::error($exception);
 
             throw new PaymentException(null,PaymentException::ErrorConnection);
         }
         catch (PaymentException $exception)
         {
-            Log::info($exception);
+            Log::error($exception);
 
             throw new PaymentException($exception->getMessage(),$exception->getCode());
         }
         catch (\Exception $exception)
         {
-            Log::info($exception);
+            Log::error($exception);
 
             throw new PaymentException(null,PaymentException::ErrorGeneral);
         }
