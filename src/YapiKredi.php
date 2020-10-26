@@ -8,6 +8,7 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 use KumsalAgency\Payment\PaymentException;
 use KumsalAgency\Payment\PaymentGateway;
@@ -106,10 +107,14 @@ class YapiKredi extends PaymentGateway
             }
             catch(ConnectionException $exception)
             {
+                Log::info($exception);
+
                 throw new PaymentException(null,PaymentException::ErrorConnection,$exception);
             }
             catch (\Exception $exception)
             {
+                Log::info($exception);
+
                 throw new PaymentException(null,PaymentException::ErrorGeneral,$exception);
             }
         }
@@ -191,14 +196,20 @@ class YapiKredi extends PaymentGateway
         }
         catch (ConnectionException $exception)
         {
+            Log::info($exception);
+
             throw new PaymentException(null,PaymentException::ErrorConnection);
         }
         catch (PaymentException $exception)
         {
+            Log::info($exception);
+
             throw new PaymentException($exception->getMessage(),$exception->getCode());
         }
         catch (\Exception $exception)
         {
+            Log::info($exception);
+
             throw new PaymentException(null,PaymentException::ErrorGeneral);
         }
     }
