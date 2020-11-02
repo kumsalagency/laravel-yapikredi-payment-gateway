@@ -49,7 +49,6 @@ class YapiKredi extends PaymentGateway
             try {
 
                 $response = Http::baseUrl($this->config['base_url'])
-                    ->withoutVerifying()
                     ->asForm()
                     ->post('PosnetWebService/XML',[
                     'xmldata' => ArrayToXml::convert([
@@ -138,7 +137,6 @@ class YapiKredi extends PaymentGateway
             }
 
             $resolveResponse = Http::baseUrl($this->config['base_url'])
-                ->withoutVerifying()
                 ->withBody('xmldata='.
                     ArrayToXml::convert([
                         'mid'   => $this->config['client_id'] ?? '',
@@ -168,7 +166,6 @@ class YapiKredi extends PaymentGateway
             }
 
             $response = Http::baseUrl($this->config['base_url'])
-                ->withoutVerifying()
                 ->withBody('xmldata='.
                     ArrayToXml::convert([
                         'mid'   => $this->config['client_id'] ?? '',
